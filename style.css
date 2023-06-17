@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+/* * Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  /* headerı yukarıya yapıştırdık */
+  position: sticky;
+  top: 0;
+  background: white;
+
+  z-index: 999;
+}
+header nav {
+  display: flex;
+  gap: 20px;
+}
+header nav a {
+  text-decoration: none;
+  color: black;
+}
+.link {
+  color: crimson;
+}
+
+/* * Ana İçerik */
+.welcome {
+  /* renk geçişi grabient.com dan alındı */
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+  font-size: 56px;
+  padding: 100px;
+  color: white;
+}
+
+/* nerler yapıyoruz alanı */
+#what-sec {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+#what-sec .info {
+  max-width: 400px;
+}
+#what-sec .info h1 {
+  margin-bottom: 50px;
+}
+#what-sec .cards {
+  display: flex;
+  gap: 40px;
+}
+#what-sec .cards .card {
+  background: rgb(56, 56, 56);
+  border-radius: 10px;
+  padding: 30px 20px;
+  min-width: 200px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  gap: 10px;
+
+  /* resimin kartın içerinde gezinmesini sağlamak iiçin */
+  position: relative;
+}
+
+.cards .card img {
+  /* resmin kartın dışarısan çıkması için absolute verdik */
+  position: absolute;
+  top: -50px;
+  width: 50px;
+}
+
+/* Projeler Alanı */
+#project-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.project {
+  display: flex;
+  gap: 30px;
+}
+
+.project-image {
+  padding: 40px 60px 0;
+  background: rgb(56, 56, 56);
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+.project-image:hover {
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+}
+.project-image span {
+  background: gray;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+}
+
+section {
+  padding: 40px;
+}
+
+/* * Resimler Alanı */
+#image-sec {
+  display: flex;
+  justify-content: space-between;
+}
+.image-box {
+}
+.image-box img {
+}
+.image-box h1 {
+}
+
+/* Bütün cihazlara uyumlu yapma */
+
+/* ekram boyutu 1200'px altın düşünce geçerli olan stiller */
+@media (max-width: 1200px) {
+  #what-sec {
+    flex-direction: column;
+  }
+  #what-sec .cards {
+    justify-content: center;
+    margin-top: 50px;
+  }
+  #what-sec .info {
+    max-width: 1200px;
+  }
+  /* kartlar kısmı */
+  .project-image {
+    padding: 10px 20px 0 !important;
+  }
+
+  /* resimler alanı */
+  #image-sec {
+    flex-direction: column;
+  }
+}
+
+/* ekram boyutu 1000'px altın düşünce geçerli olan stiller */
+@media (max-width: 1000px) {
+  .project {
+    flex-direction: column-reverse;
+  }
+  .project-image {
+    justify-content: center;
+  }
+}
